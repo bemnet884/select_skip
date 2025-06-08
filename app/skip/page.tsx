@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default async function SkipResultsPage({ searchParams }: {
-  searchParams?: Record<string, string | string[]>;
+  searchParams: Promise<Record<string, string | string[]>>;
 }) {
   const params = await searchParams;
   const postcode = typeof params?.postcode === 'string' ? params.postcode : '';
