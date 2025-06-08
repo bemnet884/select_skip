@@ -4,16 +4,13 @@ import { getSkipsByPostcodeAndArea } from "./action";
 import { SkipCard } from "./components/SkipCard";
 
 
-interface Props {
-  searchParams: {
-    postcode?: string;
-    area?: string;
-  };
-}
 
-export default async function SkipResultsPage({ searchParams }: Props) {
-  const postcode = searchParams.postcode ?? '';
-  const area = searchParams.area ?? '';
+export default async function SkipResultsPage({ searchParams }: {
+  searchParams?: { postcode?: string; area?: string };
+}) {
+
+  const postcode = searchParams?.postcode ?? '';
+  const area = searchParams?.area ?? '';
 
   if (!postcode || !area) {
     return (
