@@ -1,14 +1,14 @@
-// app/skip/page.tsx
-
 import { getSkipsByPostcodeAndArea } from "./action";
 import { SkipCard } from "./components/SkipCard";
 
+interface PageProps {
+  searchParams?: {
+    postcode?: string;
+    area?: string;
+  };
+}
 
-
-export default async function SkipResultsPage({ searchParams }: {
-  searchParams?: { postcode?: string; area?: string };
-}) {
-
+export default async function SkipResultsPage({ searchParams }: PageProps) {
   const postcode = searchParams?.postcode ?? '';
   const area = searchParams?.area ?? '';
 
