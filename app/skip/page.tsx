@@ -4,7 +4,7 @@ import { SkipCard } from "./components/SkipCard";
 export default async function SkipResultsPage({
   searchParams,
 }: {
-  searchParams?: { postcode?: string; area?: string };
+    searchParams: { postcode?: string; area?: string };
 }) {
   const { postcode = '', area = '' } = searchParams ?? {};
 
