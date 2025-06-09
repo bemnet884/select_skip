@@ -20,7 +20,9 @@ export function SkipGrid({ skips }: Props) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
       {skips.map((skip) => (
-        <SkipCard key={skip.id} skip={skip} />
+        <SkipCard key={skip.id} skip={skip} currentStep={0} setCurrentStep={function (step: number): void {
+          throw new Error('Function not implemented.');
+        }} steps={[]} />
       ))}
     </div>
   );
