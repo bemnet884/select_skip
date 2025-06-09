@@ -1,7 +1,6 @@
 // app/skip/page.tsx
 import { getSkipsByPostcodeAndArea } from "./action";
 import { type Metadata } from "next";
-import { BreadcrumbNav } from "./components/BreadcrumbNav";
 import { SkipClientPage } from "./SkipClientPage";
 import { BookingStepper } from "./components/BookingStepper";
 

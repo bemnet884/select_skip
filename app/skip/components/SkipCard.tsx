@@ -53,7 +53,7 @@ export function SkipCard({ skip, currentStep, setCurrentStep, steps }: Props) {
       }, 1500);
 
     } catch (error) {
-      // Update to error
+      console.log(error)
       toast.error('Failed to select skip', {
         id: toastId,
         description: 'Please try again later.',
