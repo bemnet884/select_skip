@@ -23,7 +23,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-4">
+    <main className="min-h-screen  flex items-center justify-center p-4">
       <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-md">
         <h1 className="text-2xl font-bold text-center">Find Skips</h1>
         <Input
