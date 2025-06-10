@@ -100,3 +100,41 @@ npm install
 
 # Start the development server
 npm run dev
+````
+
+---
+
+## 📌 Notes
+
+* This app focuses **only on Step 3** of the booking flow: **Skip Size Selection**
+* Earlier steps (postcode, address, waste type) are mocked or prefilled
+* Current API query is hardcoded to:
+
+  * `postcode=NR32`
+  * `area=Lowestoft`
+
+---
+
+## 🎥 Demo Videos
+
+* 📺 **Desktop Walkthrough:** [Watch on Google Drive](https://drive.google.com/file/d/1r-Lvye_hbd91jwzCIRt5IBg5-IELg841/view?usp=sharing)
+* 📱 **Mobile Walkthrough:** [Watch on Google Drive](https://drive.google.com/file/d/1wM2z1RCoKn5EO2K5iqmA949bL2ziv1Sa/view?usp=sharing)
+
+---
+
+## 🙋 About the Developer
+
+**👨‍💻 Bemnet Beyene (Bem)**
+📧 [hannabemnet94@gmail.com](mailto:hannabemnet94@gmail.com)
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/bemnetbeyene)
+
+---
+
+## 📝 License
+
+This project is developed for the REMWaste front-end coding challenge.
+Not intended for commercial or production use.
+
+---
+
+**Thanks to REMWaste for this fun and rewarding opportunity!**
