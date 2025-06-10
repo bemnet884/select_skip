@@ -5,7 +5,7 @@ import { SkipGrid } from './components/SkipGrid';
 import { SkipFilters } from './components/SkipFilters';
 import { Skip } from '@/lib/types';
 import { ErrorState } from './components/ErrorState';
-
+import { BookingStepper } from './components/BookingStepper';
 
 interface Props {
   skips: Skip[];
@@ -15,12 +15,22 @@ interface Props {
 
 export function SkipClientPage({ skips, postcode, area }: Props) {
   const [filteredSkips, setFilteredSkips] = useState<Skip[]>(skips);
+  const [currentStep, setCurrentStep] = useState(2);
   const [filters, setFilters] = useState({
     size: '',
     onlyHeavyWaste: false,
     maxPrice: '',
     roadAllowed: false
   });
+
+  const steps = [
+    { label: 'Postcode' },
+    { label: 'Waste Type' },
+    { label: 'Select Skip' },
+    { label: 'Permit Check' },
+    { label: 'Choose Date' },
+    { label: 'Payment' }
+  ];
 
   useEffect(() => {
     const filtered = skips.filter((skip) => {
@@ -48,6 +58,7 @@ export function SkipClientPage({ skips, postcode, area }: Props) {
 
   return (
     <div className="space-y-6">
+      <BookingStepper currentStep={currentStep} steps={steps} setCurrentStep={setCurrentStep} />
       <div className="text-center space-y-1">
         <h1 className="text-3xl font-bold">Available Skips</h1>
         <p className="text-muted-foreground text-sm">
@@ -60,7 +71,12 @@ export function SkipClientPage({ skips, postcode, area }: Props) {
       {filteredSkips.length === 0 ? (
         <ErrorState message="No skips found for this location and filter." />
       ) : (
-        <SkipGrid skips={filteredSkips} />
+          <SkipGrid
+            skips={filteredSkips}
+            currentStep={currentStep}
+            setCurrentStep={setCurrentStep}
+            steps={steps}
+          />
       )}
     </div>
   );

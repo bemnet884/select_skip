@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Skip } from '@/lib/types';
@@ -31,38 +32,28 @@ interface Props {
 }
 
 export function SkipCard({ skip, currentStep, setCurrentStep, steps }: Props) {
+  const [open, setOpen] = useState(false);
+
   const handleConfirm = async () => {
-    // Show loading toast
-    const toastId = toast.loading('Processing your request...');
 
     try {
-      // Simulate async operation (replace with your actual API call)
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      // Update to success
-      toast.success('Skip selected successfully!', {
-        id: toastId,
-        description: 'Moving to next step...',
-      });
-
-      // Move to next step after a brief delay
+      setOpen(false);
       setTimeout(() => {
-        if (currentStep < steps.length - 1) {
+        if (setCurrentStep && currentStep < steps.length - 1) {
           setCurrentStep(currentStep + 1);
         }
-      }, 1500);
+      }, 100);
 
     } catch (error) {
-      console.log(error)
-      toast.error('Failed to select skip', {
-        id: toastId,
-        description: 'Please try again later.',
+      console.error(error);
+      toast.error("Failed to select skip", {
+        description: "Please try again later.",
       });
     }
   };
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <Card className="w-full shadow-sm hover:shadow-md transition-shadow rounded-2xl border border-muted">
         <CardContent className="p-6 space-y-5">
           {/* Image */}
@@ -151,7 +142,7 @@ export function SkipCard({ skip, currentStep, setCurrentStep, steps }: Props) {
         </div>
 
         <DialogFooter className="mt-6">
-          <Button variant="secondary">Cancel</Button>
+          <Button variant="secondary" onClick={() => setOpen(false)}>Cancel</Button>
           <Button onClick={handleConfirm}>
             Confirm & Continue
             <ArrowRight className="ml-2 h-4 w-4" />
