@@ -1,9 +1,16 @@
 'use client';
 
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
-import { PoundSterlingIcon, FunnelIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { FunnelIcon, PoundSterlingIcon } from 'lucide-react';
+import { useState } from 'react';
 
 interface Filters {
   size: string;
@@ -18,15 +25,27 @@ interface Props {
 }
 
 export function SkipFilters({ filters, setFilters }: Props) {
+  const [open, setOpen] = useState(false);
+  const resetFilters = () => {
+    setFilters({
+      size: '',
+      maxPrice: '',
+      onlyHeavyWaste: false,
+      roadAllowed: false,
+    });
+    setOpen(false); // Close popover after reset
+  };
   return (
-    <section className="border rounded-xl p-4 sm:p-6 shadow-md bg-muted/30 space-y-4">
-      <div className="flex items-center gap-2 text-muted-foreground">
-        <FunnelIcon className="h-5 w-5" />
-        <span className="text-sm font-semibold">Filters</span>
-      </div>
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline" className="flex items-center gap-2">
+          <FunnelIcon className="h-4 w-4" />
+          Filters
+        </Button>
+      </PopoverTrigger>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {/* Skip Size */}
+      <PopoverContent className="w-[320px] sm:w-[400px] space-y-4">
+        {/* Size */}
         <div className="space-y-1">
           <Label htmlFor="size">Size (yd³)</Label>
           <Input
@@ -59,7 +78,7 @@ export function SkipFilters({ filters, setFilters }: Props) {
         </div>
 
         {/* Checkboxes */}
-        <div className="space-y-3 pt-1">
+        <div className="space-y-3">
           <div className="flex items-center gap-2">
             <Checkbox
               id="heavyWaste"
@@ -81,8 +100,20 @@ export function SkipFilters({ filters, setFilters }: Props) {
             />
             <Label htmlFor="roadAllowed">Allows on Road</Label>
           </div>
+          {/* Reset Button */}
+          <div className="pt-2">
+            <Button
+              variant="ghost"
+              className="w-full text-sm"
+              onClick={resetFilters}
+            >
+              Reset Filters
+            </Button>
+          </div>
+
         </div>
-      </div>
-    </section>
+
+      </PopoverContent>
+    </Popover>
   );
 }
