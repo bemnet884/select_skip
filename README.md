@@ -1,4 +1,4 @@
-```markdown
+```
 # ♻️ Skip Size Selector Redesign – REMWaste Coding Challenge
 
 This is a redesigned version of the **“Choose Your Skip Size”** page for [REMWaste's booking platform](https://wewantwaste.co.uk/), built as part of a front-end development challenge.
