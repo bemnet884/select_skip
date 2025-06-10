@@ -112,7 +112,7 @@ npm run dev
 
 ## 📌 Notes
 
-* This project focuses **only on Step 2** of the booking process: **Skip Size Selection**.
+* This project focuses **only on Step 3** of the booking process: **Skip Size Selection**.
 * Initial steps like postcode, address, or waste type are mocked or pre-filled.
 * The API used is hardcoded to:
 
