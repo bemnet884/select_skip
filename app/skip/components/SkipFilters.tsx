@@ -36,7 +36,7 @@ export function SkipFilters({ filters, setFilters }: Props) {
     setOpen(false); // Close popover after reset
   };
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button variant="outline" className="flex items-center gap-2">
           <FunnelIcon className="h-4 w-4" />
@@ -44,7 +44,11 @@ export function SkipFilters({ filters, setFilters }: Props) {
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="w-[320px] sm:w-[400px] space-y-4">
+      <PopoverContent
+        className="w-[320px] sm:w-[400px] space-y-4 max-h-[70vh] overflow-y-auto"
+        align="start"
+        sideOffset={8}
+      >
         {/* Size */}
         <div className="space-y-1">
           <Label htmlFor="size">Size (yd³)</Label>
@@ -100,7 +104,7 @@ export function SkipFilters({ filters, setFilters }: Props) {
             />
             <Label htmlFor="roadAllowed">Allows on Road</Label>
           </div>
-          {/* Reset Button */}
+
           <div className="pt-2">
             <Button
               variant="ghost"
@@ -110,10 +114,9 @@ export function SkipFilters({ filters, setFilters }: Props) {
               Reset Filters
             </Button>
           </div>
-
         </div>
-
       </PopoverContent>
     </Popover>
+
   );
 }
