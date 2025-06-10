@@ -1,4 +1,4 @@
-```
+
 # ♻️ Skip Size Selector Redesign – REMWaste Coding Challenge
 
 This is a redesigned version of the **“Choose Your Skip Size”** page for [REMWaste's booking platform](https://wewantwaste.co.uk/), built as part of a front-end development challenge.
@@ -49,11 +49,10 @@ The aim of this project is to **improve the UI/UX**, **modernize the look and fe
 ### 📦 Skip Options Display
 
 - Data fetched from:
-```
+
 
 [https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32\&area=Lowestoft](https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft)
 
-````
 - Each skip card includes:
 - Name
 - Size
