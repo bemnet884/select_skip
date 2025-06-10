@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ♻️ Skip Hire Booking App
 
-## Getting Started
+A modern, step-by-step skip booking web application built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **ShadCN UI**. This app provides an intuitive flow for users to book waste skips, including postcode entry, waste type selection, skip selection, permit checking, and payment.
 
-First, run the development server:
+## 🔗 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+👉 [select-skip.vercel.app](https://select-skip.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🧭 **Multi-Step Booking Flow** — Seamless navigation between steps using a visual stepper.
+- 📍 **Postcode and Area Search** — Users can search for skips based on location.
+- 🛠️ **Skip Selection** — Display available skips in a responsive grid.
+- 📄 **Permit Check Step** — Include area-specific permit info with back/next navigation.
+- 📅 **Date Selection & Payment** — Placeholder steps ready for calendar & Stripe integration.
+- 💅 **Modern UI/UX** — Styled using Tailwind CSS and ShadCN components.
+- ✅ **Client-Side Routing** — Built with Next.js App Router for a fast, reactive experience.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📸 Screenshots
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Homepage
+![Homepage](./screenshots/homepage.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Stepper Flow
+![Stepper](./screenshots/stepper.png)
 
-## Deploy on Vercel
+### Skip Selection
+![Skip Selection](./screenshots/skip-selection.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧑‍💻 Tech Stack
+
+| Tech             | Description                       |
+|------------------|-----------------------------------|
+| **Next.js 14**   | React framework using App Router  |
+| **TypeScript**   | Static typing                     |
+| **Tailwind CSS** | Utility-first CSS styling         |
+| **ShadCN/UI**    | Accessible, customizable UI       |
+| **Vercel**       | Deployment platform               |
+
+---
+
+## 🏗️ Project Structure
+
