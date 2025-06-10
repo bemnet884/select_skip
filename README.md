@@ -1,30 +1,29 @@
-
 # ♻️ Skip Size Selector Redesign – REMWaste Coding Challenge
 
 This is a redesigned version of the **“Choose Your Skip Size”** page for [REMWaste's booking platform](https://wewantwaste.co.uk/), built as part of a front-end development challenge.
 
-The aim of this project is to **improve the UI/UX**, **modernize the look and feel**, and **maintain full functionality** using clean, responsive, and maintainable React code.
+The goal of this project is to **modernize the UI/UX**, **enhance responsiveness**, and ensure a clean, functional, and intuitive user experience using a modern tech stack.
 
 ---
 
 ## 🚀 Live Demo
 
-- 🔗 **Live Preview:** [https://select-skip.vercel.app/](#)
-- 💻 **GitHub Repository:** [https://github.com/bemnet884/select_skip](#)
-- ▶️ **Demo Video:** [https://drive.google.com/file/d/1r-Lvye_hbd91jwzCIRt5IBg5-IELg841/view?usp=sharing](#)
+- 🔗 **Live Preview:** [View on Vercel](https://select-skip.vercel.app/)
+- 💻 **GitHub Repository:** [View Code on GitHub](https://github.com/bemnet884/select_skip)
+- ▶️ **Demo Video:** [Watch Full Demo](https://drive.google.com/file/d/1r-Lvye_hbd91jwzCIRt5IBg5-IELg841/view?usp=sharing)
 
 ---
 
 ## 🧰 Tech Stack
 
-| Technology       | Description |
+| Technology        | Description |
 |------------------|-------------|
-| **React 18**     | Component-based frontend architecture |
-| **Next.js (App Router)** | Server rendering, routing, and API handling (used **Server Actions** to fetch skip data) |
-| **TypeScript**   | Type-safe development |
-| **Tailwind CSS** | Utility-first responsive styling |
-| **shadcn/ui**    | Accessible headless UI components like `Popover`, `Sheet`, and `Dialog` |
-| **Lucide Icons** | Clean and scalable SVG icons |
+| **React 18**      | Component-based frontend architecture |
+| **Next.js (App Router)** | Server rendering and routing with Server Actions to fetch API data |
+| **TypeScript**    | Type-safe development |
+| **Tailwind CSS**  | Utility-first responsive styling |
+| **shadcn/ui**     | Accessible UI primitives (e.g., `Popover`, `Sheet`, `Dialog`) |
+| **Lucide Icons**  | Elegant and customizable SVG icon set |
 
 ---
 
@@ -40,57 +39,52 @@ The aim of this project is to **improve the UI/UX**, **modernize the look and fe
 
 ### 🧭 Sticky Blurry Stepper Navigation
 
-- Displays the current booking progress (Step 3: Choose Your Skip)
-- **Sticky at the top** with a **backdrop blur effect** to maintain context while scrolling
-- Responsive layout across devices
+- Displays booking progress (**Step 3: Choose Your Skip**)
+- **Sticky header with backdrop blur** for better context and smooth experience
+- Works seamlessly on desktop and mobile
 
 ---
 
 ### 📦 Skip Options Display
 
-- Data fetched from:
+- Skips are fetched dynamically from a remote API:
+  - [Fetch Skip API](https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft)
+- Each skip card displays:
+  - Name
+  - Size
+  - Image
+  - Price
+  - Allowed on Road badge
+  - Heavy Waste Allowed badge
+  - **“Select this Skip”** button
 
-
-[https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32\&area=Lowestoft](https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft)
-
-- Each skip card includes:
-- Name
-- Size
-- Image
-- Price
-- Allowed on Road indicator
-- Heavy Waste Allowed indicator
-- "Select this Skip" button
-
-- On selection:
-- A **modal** appears for confirmation
+- On selecting a skip:
+  - A **modal** appears for confirmation before moving forward
 
 ---
 
 ### 🎛️ Filtering System
 
-#### ✅ Features:
-- Filter by:
+#### ✅ Key Filters:
 - **Skip Size**
 - **Price Range**
 - **Allowed on Road**
 - **Allows Heavy Waste**
-- **Reset Filters** button to clear all active filters
+- **Reset Filters** to clear all selections
 
-#### 📱 Responsive Filter UI:
-- **Mobile**: Opens in a `Sheet` (bottom drawer)
-- **Desktop**: Opens in a `Popover`
+#### 📱 Responsive Filter Behavior:
+- **Mobile:** Filters open in a `Sheet` (bottom drawer)
+- **Desktop:** Filters open in a `Popover`
 
 ---
 
-### 💡 User Experience (UX) Enhancements
+### 💡 UX Highlights
 
 - Fully responsive layout
-- Mobile-first design considerations
-- Visual hierarchy optimized for clarity
-- Accessible component usage
-- Fast interactions (no reloads)
-- Smooth transitions
+- Optimized for mobile and desktop
+- Clear visual hierarchy
+- Accessible keyboard navigation
+- Fast, smooth interactions
 
 ---
 
@@ -106,41 +100,3 @@ npm install
 
 # Start the development server
 npm run dev
-````
-
----
-
-## 📌 Notes
-
-* This project focuses **only on Step 3** of the booking process: **Skip Size Selection**.
-* Initial steps like postcode, address, or waste type are mocked or pre-filled.
-* The API used is hardcoded to:
-
-  * `postcode=NR32`
-  * `area=Lowestoft`
-
----
-
-## 🎥 Demo Video
-
-Watch how the interface works across mobile and desktop:
-📺 **Desktop Demo:** [https://drive.google.com/file/d/1r-Lvye_hbd91jwzCIRt5IBg5-IELg841/view?usp=sharing](#)
-📺 **Mobile Demo:** [https://drive.google.com/file/d/1wM2z1RCoKn5EO2K5iqmA949bL2ziv1Sa/view?usp=sharing](#)
-
----
-
-## 🙋 Contact
-
-**Developer:** Bemnet (Bem)
-📧 Email: \[[hannabemnet94@gmail.com](mailto:hannabemnet94@gmail.com)]
-🌐 LinkedIn: [www.linkedin.com/in/bemnetbeyene](#)
-
----
-
-## 📝 License
-
-This project was created solely for the purpose of the REMWaste front-end coding challenge. Not intended for production or commercial use.
-
----
-
-Thank you REMWaste for the opportunity!
