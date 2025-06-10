@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BookingStepper } from './components/BookingStepper';
 import { Skip } from '@/lib/types';
 import { SkipCard } from './components/SkipCard';
 import { PermitCheck } from './components/PermitCheck'; // create this component
 import { Button } from '@/components/ui/button';
+import { SkipFilters } from './components/SkipFilters';
 
 interface Props {
   skips: Skip[];
@@ -23,7 +24,39 @@ const steps = [
 ];
 
 export default function SkipClientWrapper({ skips, postcode, area }: Props) {
-  const [currentStep, setCurrentStep] = useState(2); // start at "Select Skip"
+  const [filteredSkips, setFilteredSkips] = useState<Skip[]>(skips);
+  const [currentStep, setCurrentStep] = useState(2);
+  const [filters, setFilters] = useState({
+    size: '',
+    onlyHeavyWaste: false,
+    maxPrice: '',
+    roadAllowed: false
+  });
+
+
+  useEffect(() => {
+    const filtered = skips.filter((skip) => {
+      const sizeMatch = filters.size
+        ? skip.size === parseInt(filters.size)
+        : true;
+
+      const heavyWasteMatch = filters.onlyHeavyWaste
+        ? skip.allows_heavy_waste
+        : true;
+
+      const roadAllowed = filters.roadAllowed
+        ? skip.allowed_on_road
+        : true;
+
+      const priceMatch = filters.maxPrice
+        ? skip.price_before_vat <= parseFloat(filters.maxPrice)
+        : true;
+
+      return sizeMatch && heavyWasteMatch && priceMatch && roadAllowed;
+    });
+
+    setFilteredSkips(filtered);
+  }, [filters, skips]);
 
   return (
     <div className="space-y-6">
@@ -33,9 +66,10 @@ export default function SkipClientWrapper({ skips, postcode, area }: Props) {
         steps={steps}
       />
 
-      {currentStep === 2 && (
+      {currentStep === 2 && (<>
+        <SkipFilters filters={filters} setFilters={setFilters} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {skips.map((skip) => (
+          {filteredSkips.map((skip) => (
             <SkipCard
               key={skip.id}
               skip={skip}
@@ -44,7 +78,7 @@ export default function SkipClientWrapper({ skips, postcode, area }: Props) {
               steps={steps}
             />
           ))}
-        </div>
+        </div></>
       )}
 
       {currentStep === 3 && (

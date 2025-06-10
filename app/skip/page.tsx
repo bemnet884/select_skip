@@ -26,6 +26,7 @@ export default async function SkipResultsPage({ searchParams }: {
   const skips = await getSkipsByPostcodeAndArea(postcode, area);
   return (
     <main className="max-w-6xl mx-auto p-4 space-y-6">
+
       <SkipClientWrapper skips={skips} postcode={postcode} area={area} />
     </main>
   );
