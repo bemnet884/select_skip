@@ -32,7 +32,7 @@ The aim of this project is to **improve the UI/UX**, **modernize the look and fe
 
 | Desktop | Mobile |
 |--------|--------|
-| ![Desktop Screenshot](./public/screenshots/skipselection.png) | ![Mobile Screenshot](./public/screenshots/skipmobile1.png) |
+| ![Desktop Screenshot](./public/screenshots/skipselection.png) | ![Mobile Screenshot](./public/screenshots/skipmobile1.jpg) |
 
 ---
 
@@ -144,5 +144,3 @@ This project was created solely for the purpose of the REMWaste front-end coding
 ---
 
 Thank you REMWaste for the opportunity!
-
-```
