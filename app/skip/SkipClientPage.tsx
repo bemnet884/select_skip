@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ErrorState } from './components/ErrorState';
 import { SkipGrid } from './components/SkipGrid';
 import { SkipFilters } from './components/SkipFilters';
 import { Skip } from '@/lib/types';
+import { ErrorState } from './components/ErrorState';
+
 
 interface Props {
   skips: Skip[];
