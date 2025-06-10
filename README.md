@@ -1,49 +1,62 @@
-# ♻️ Skip Hire Booking App
+# Skip Selection Page Redesign – REMWaste Frontend Code Challenge
 
-A modern, step-by-step skip booking web application built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **ShadCN UI**. This app provides an intuitive flow for users to book waste skips, including postcode entry, waste type selection, skip selection, permit checking, and payment.
+## Overview
 
-## 🔗 Live Demo
+This project is a frontend code challenge for REMWaste as part of the Full Stack Developer application process. The challenge involved **redesigning the "Choose Your Skip Size" page** from the REMWaste website using **React**.
 
-👉 [select-skip.vercel.app](https://select-skip.vercel.app)
-
----
-
-## 🚀 Features
-
-- 🧭 **Multi-Step Booking Flow** — Seamless navigation between steps using a visual stepper.
-- 📍 **Postcode and Area Search** — Users can search for skips based on location.
-- 🛠️ **Skip Selection** — Display available skips in a responsive grid.
-- 📄 **Permit Check Step** — Include area-specific permit info with back/next navigation.
-- 📅 **Date Selection & Payment** — Placeholder steps ready for calendar & Stripe integration.
-- 💅 **Modern UI/UX** — Styled using Tailwind CSS and ShadCN components.
-- ✅ **Client-Side Routing** — Built with Next.js App Router for a fast, reactive experience.
+The focus of this submission is entirely on improving the **UI/UX** of the skip selection step in the booking flow, **not the full booking process**.
 
 ---
 
-## 📸 Screenshots
+## 🔗 Original Page
 
-### Homepage
-![Homepage](./screenshots/homepage.png)
-
-### Stepper Flow
-![Stepper](./screenshots/stepper.png)
-
-### Skip Selection
-![Skip Selection](./screenshots/skip-selection.png)
+To view the original page:
+1. Go to: [https://wewantwaste.co.uk](https://wewantwaste.co.uk)
+2. Enter postcode: `LE10 1SH`
+3. Select any address
+4. Select **Garden Waste**
+5. You will land on the **"Choose Your Skip Size"** page – the one being redesigned
 
 ---
 
-## 🧑‍💻 Tech Stack
+## 🎯 Objectives
 
-| Tech             | Description                       |
-|------------------|-----------------------------------|
-| **Next.js 14**   | React framework using App Router  |
-| **TypeScript**   | Static typing                     |
-| **Tailwind CSS** | Utility-first CSS styling         |
-| **ShadCN/UI**    | Accessible, customizable UI       |
-| **Vercel**       | Deployment platform               |
+- Redesign the skip selection page with a **fresh, modern UI**
+- Improve **mobile and desktop responsiveness**
+- Preserve all **functionalities** from the original page
+- Ensure the redesigned component fetches and displays skip data from the provided API
 
 ---
 
-## 🏗️ Project Structure
+## 📦 Tech Stack
+
+- **React (Functional Components & Hooks)**
+- **Tailwind CSS** for styling
+- **Axios** for API data fetching (optional if you're not using native `fetch`)
+- **React Icons** (for visual improvements)
+
+---
+
+## 🔍 Features Implemented
+
+- **API integration** using:
+  - `https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft`
+- Dynamic rendering of skip options with:
+  - Image
+  - Size
+  - Price
+  - Selection indicator
+- Modern UI design with:
+  - Card layout
+  - Highlighted selected skip
+  - Accessible layout
+- **Responsive design** supporting:
+  - Desktop view
+  - Tablet view
+  - Mobile view
+- Code structured for **readability and maintainability**
+
+---
+
+## 📁 Project Structure
 
