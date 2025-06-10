@@ -1,16 +1,17 @@
-````markdown
+```markdown
 # ♻️ Skip Size Selector Redesign – REMWaste Coding Challenge
 
-This project is a **UI redesign** of the **"Choose Your Skip Size"** page for [REMWaste's booking platform](https://wewantwaste.co.uk/), built as part of the front-end job challenge.
+This is a redesigned version of the **“Choose Your Skip Size”** page for [REMWaste's booking platform](https://wewantwaste.co.uk/), built as part of a front-end development challenge.
 
-The goal is to create a responsive, modern, and user-friendly interface for selecting a skip size, while maintaining the original functionality.
+The aim of this project is to **improve the UI/UX**, **modernize the look and feel**, and **maintain full functionality** using clean, responsive, and maintainable React code.
 
 ---
 
 ## 🚀 Live Demo
 
-🔗 [Live on Vercel](#) *(https://select-skip.vercel.app/)*  
-💻 [GitHub Repository](#) *(https://github.com/bemnet884/select_skip)*
+- 🔗 **Live Preview:** [https://select-skip.vercel.app/](#)
+- 💻 **GitHub Repository:** [https://github.com/bemnet884/select_skip](#)
+- ▶️ **Demo Video:** [https://drive.google.com/file/d/1r-Lvye_hbd91jwzCIRt5IBg5-IELg841/view?usp=sharing](#)
 
 ---
 
@@ -18,58 +19,93 @@ The goal is to create a responsive, modern, and user-friendly interface for sele
 
 | Technology       | Description |
 |------------------|-------------|
-| **React 18**     | Component-based UI framework |
-| **Next.js** (App Router) | Routing and rendering (with **Server Actions** for API fetching) |
-| **TypeScript**   | Static typing for safer, maintainable code |
+| **React 18**     | Component-based frontend architecture |
+| **Next.js (App Router)** | Server rendering, routing, and API handling (used **Server Actions** to fetch skip data) |
+| **TypeScript**   | Type-safe development |
 | **Tailwind CSS** | Utility-first responsive styling |
-| **shadcn/ui**    | Accessible and composable UI components (Popover, Sheet, Modal) |
-| **Lucide Icons** | Lightweight SVG icon library |
+| **shadcn/ui**    | Accessible headless UI components like `Popover`, `Sheet`, and `Dialog` |
+| **Lucide Icons** | Clean and scalable SVG icons |
 
 ---
 
-## ✅ Features Implemented
+## 📸 Screenshots
 
-### 🧭 Stepper Navigation
-- Displays step progress (e.g., "Step 3: Choose Your Skip").
-- Mimics the natural flow from postcode ➝ address ➝ waste type.
-
-### 📦 Skip Selection
-- Fetches skips dynamically using **Next.js Server Actions** from the API:  
-  `https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft`
-- Skip card includes:
-  - Name, size, and image
-  - Price
-  - "Select this Skip" button
-- **Modal** confirmation upon skip selection
-
-### 🔍 Filter System
-
-- **Mobile**: Filters open in a **Sheet** (slide-over drawer)
-- **Desktop**: Filters appear in a **Popover**
-
-Filtering includes:
-- Skip size
-- Skip type
-- Other relevant categories (depending on data)
-
-### 🎨 UX/UI
-- Fully responsive on all screen sizes
-- Mobile-first layout
-- Clear visual hierarchy
-- Interactive and accessible components
+| Desktop | Mobile |
+|--------|--------|
+| ![Desktop Screenshot](./public/screenshots/skipselection.png) | ![Mobile Screenshot](./public/screenshots/skipmobile1.png) |
 
 ---
 
-## 📦 Installation
+## 🧩 Features
+
+### 🧭 Sticky Blurry Stepper Navigation
+
+- Displays the current booking progress (Step 3: Choose Your Skip)
+- **Sticky at the top** with a **backdrop blur effect** to maintain context while scrolling
+- Responsive layout across devices
+
+---
+
+### 📦 Skip Options Display
+
+- Data fetched from:
+```
+
+[https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32\&area=Lowestoft](https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft)
+
+````
+- Each skip card includes:
+- Name
+- Size
+- Image
+- Price
+- Allowed on Road indicator
+- Heavy Waste Allowed indicator
+- "Select this Skip" button
+
+- On selection:
+- A **modal** appears for confirmation
+
+---
+
+### 🎛️ Filtering System
+
+#### ✅ Features:
+- Filter by:
+- **Skip Size**
+- **Price Range**
+- **Allowed on Road**
+- **Allows Heavy Waste**
+- **Reset Filters** button to clear all active filters
+
+#### 📱 Responsive Filter UI:
+- **Mobile**: Opens in a `Sheet` (bottom drawer)
+- **Desktop**: Opens in a `Popover`
+
+---
+
+### 💡 User Experience (UX) Enhancements
+
+- Fully responsive layout
+- Mobile-first design considerations
+- Visual hierarchy optimized for clarity
+- Accessible component usage
+- Fast interactions (no reloads)
+- Smooth transitions
+
+---
+
+## 📦 Installation & Running Locally
 
 ```bash
+# Clone the repository
 git clone https://github.com/bemnet884/select_skip.git
 cd select_skip
 
 # Install dependencies
 npm install
 
-# Run the development server
+# Start the development server
 npm run dev
 ````
 
@@ -77,20 +113,37 @@ npm run dev
 
 ## 📌 Notes
 
-* The focus of this solution is **only** on the skip selection page (step 2).
-* Upstream steps like postcode entry, address, or waste type selection are mocked or pre-filled.
-* The selected postcode used for API is `NR32` and area is `Lowestoft`.
+* This project focuses **only on Step 2** of the booking process: **Skip Size Selection**.
+* Initial steps like postcode, address, or waste type are mocked or pre-filled.
+* The API used is hardcoded to:
+
+  * `postcode=NR32`
+  * `area=Lowestoft`
+
+---
+
+## 🎥 Demo Video
+
+Watch how the interface works across mobile and desktop:
+📺 **Desktop Demo:** [https://drive.google.com/file/d/1r-Lvye_hbd91jwzCIRt5IBg5-IELg841/view?usp=sharing](#)
+📺 **Mobile Demo:** [https://drive.google.com/file/d/1wM2z1RCoKn5EO2K5iqmA949bL2ziv1Sa/view?usp=sharing](#)
 
 ---
 
 ## 🙋 Contact
 
-**Developer**: Bemnet (Bem)
+**Developer:** Bemnet (Bem)
 📧 Email: \[[hannabemnet94@gmail.com](mailto:hannabemnet94@gmail.com)]
 🌐 LinkedIn: [www.linkedin.com/in/bemnetbeyene](#)
 
 ---
 
-Thanks to REMWaste for this challenge opportunity. Looking forward to your feedback!
+## 📝 License
+
+This project was created solely for the purpose of the REMWaste front-end coding challenge. Not intended for production or commercial use.
+
+---
+
+Thank you REMWaste for the opportunity!
 
 ```
